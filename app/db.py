@@ -50,7 +50,6 @@ def get_document(doc_id, user_id):
     return documents[doc_id]
 
 def send_document_via_email(doc_id):
-    # Mocked email sending (replace with actual email-sending code)
     doc = documents[doc_id]
     for collaborator_id in doc["collaborators"]:
         user = users[collaborator_id]

@@ -7,7 +7,7 @@ api_key_header = APIKeyHeader(name="X-API-Key")
 def get_user(api_key_header: str = Security(api_key_header)):
     if check_api_key(api_key_header):
         user = get_user_from_api_key(api_key_header)
-        user["id"] = api_keys[api_key_header]  # Tambahkan ID pengguna ke respons
+        user["id"] = api_keys[api_key_header]  
         return user
     raise HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
